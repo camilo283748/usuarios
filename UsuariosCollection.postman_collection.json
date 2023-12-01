@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "f071a405-ea61-4c2e-910c-d6371f488e30",
+		"name": "UsuariosCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listar usuarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMTM4NDgyNiwiZXhwIjoxNzAxNDcxMjI2fQ.MgEo6ASmNZ6wsxNwYnbtj1Iu2yvkfIvC-PGJLX8uMHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMTM3NjU1NywiZXhwIjoxNzAxNDYyOTU3fQ.AXe05AKy9M8L2dgy6qBehbQuJs52iQvph7UXMl3Bl9E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\":2,\r\n        \"username\": \"esteban90\",\r\n        \"correo\": \"nuevocorreo@hotmail.com\",\r\n        \"nombre\": \"esteban\",\r\n        \"password\": \"admin\",\r\n        \"telefonos\": [\r\n            {\r\n                \"numero\": \"46378274\",\r\n                \"codigoCiudad\": 809,\r\n                \"codigoPais\": 56\r\n            },\r\n            {\r\n                \"numero\": \"93847857\",\r\n                \"codigoCiudad\": 809,\r\n                \"codigoPais\": 56\r\n            }\r\n        ],\r\n        \"role\": \"ADMIN\"\r\n\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"username\": \"esteban90\",\r\n        \"correo\": \"esteban90gmail.com\",\r\n        \"nombre\": \"esteban\",\r\n        \"password\": \"admin\",\r\n        \"telefonos\": [\r\n            {\r\n                \"numero\": \"46378273\",\r\n                \"codigoCiudad\": 809,\r\n                \"codigoPais\": 56\r\n            },\r\n            {\r\n                \"numero\": \"93847857\",\r\n                \"codigoCiudad\": 809,\r\n                \"codigoPais\": 56\r\n            }\r\n        ]\r\n\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/auth/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMTM4NDgyNiwiZXhwIjoxNzAxNDcxMjI2fQ.MgEo6ASmNZ6wsxNwYnbtj1Iu2yvkfIvC-PGJLX8uMHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/usuarios/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"usuarios",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
